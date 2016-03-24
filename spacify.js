@@ -9,5 +9,10 @@ String.prototype.spacify = function() {
   return spaced + this[i]
 }
 
+String.prototype.spacify2 = function() {
+  return this.split('').join(' ');
+}
+
+
 var a = 'diana';
-console.log(a.spacify())
+console.log(a.spacify() === a.spacify2())
