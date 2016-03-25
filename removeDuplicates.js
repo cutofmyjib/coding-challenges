@@ -18,4 +18,18 @@ function removeDupes(arr) {
   return arr.length;
 }
 
-console.log(removeDupes([1,1,2,2,3,4,1]))
+//more efficient
+function removeDupes2(arr) {
+  var frequency = {}
+  var noDuplicates = []
+  for (var i = 0; i < arr.length; i++) {
+    if (!(frequency[arr[i]])) {
+      frequency[arr[i]] = true
+      noDuplicates.push(arr[i])
+    }
+  }
+  return noDuplicates.length
+}
+
+// console.log(removeDupes([1,1,2,2,3,4,1]))
+console.log(removeDupes2([1,1,2,2,3,4,1]))
