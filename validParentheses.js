@@ -21,34 +21,34 @@ function validParentheses(str) {
   str = str.split('')
 
   for (var i = 0; i < str.length; i++) {
-    if (str[i].isOpen()) {
+    if (isOpen(str[i])) {
       stack.push(str[i])
     } else {
       var peek = stack[stack.length-1]
-      if (peek && peek.isPair(str[i])) {
+      if (peek && isPair(peek,str[i])) {
         stack.splice(stack.length-1, 1)
       } else {
         return false
       }
     }
   }
-  return stack.length === 0 ? true : false
+  return stack.length === 0
 }
 
-String.prototype.isOpen = function() {
-  if (this.length > 1) {
+function isOpen(str) {
+  if (str.length > 1) {
     throw new Error('must be 1 character')
   }
-  return (this[0] === '{' || this[0] === '(' || this[0] === '[')
+  return (str[0] === '{' || str[0] === '(' || str[0] === '[')
 }
 
-String.prototype.isPair = function(piece) {
+function isPair(stackPiece, string) {
   types = {
     '{': '}',
     '(': ')',
     '[': ']'
   }
-  return (types[this[0]] === piece)
+  return (types[stackPiece] === string)
 }
 
 console.log(validParentheses('()[]{}'))
