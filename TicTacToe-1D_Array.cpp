@@ -1,10 +1,3 @@
-// Author: Diana Lozano
-// Assignment Number: Lab 4
-// File Name: L4_lozano.cpp
-// Course/Section: COSC 1337 Section 012
-// Date: 10/28/2018
-// Instructor: Dr. B. Hohlt
-//
 /*
 Write a program that allows two players to play a game of tic-tac-toe
 using the class TicTacToe to represent the gameboard. The main function
